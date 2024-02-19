@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-devtools-outline",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A Vite plugin that adds a shortcut to show every element outline",
   "repository": "https://github.com/leoboyerbx/vite-plugin-devtools-outline",
   "homepage": "https://github.com/leoboyerbx/vite-plugin-devtools-outline#readme",
