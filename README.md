@@ -11,26 +11,31 @@ Install the package
 npm
 
 ```bash
-npm i -D unocss-preset-columns
+npm i -D vite-plugin-devtools-outline
 ```
 
 pnpm
 
 ```bash
-pnpm i -D unocss-preset-columns
+pnpm i -D vite-plugin-devtools-outline
 ```
 
-In `uno.config.ts`
+In `vite.config.ts`
 
 ```typescript
-import { presetColumns } from "unocss-preset-columns";
+import { presetColumns } from "vite-plugin-devtools-outline";
 
 export default defineConfig({
   // ...
-  presets: [
-    // ...
-    presetColumns(14), // The parameter is the number of columns in your design
-  ],
+  plugins: [devtoolsOutline()],
   // ...
 });
 ```
+
+And in your `main.ts` or anywhere else in your code:
+
+```javascript
+import "virtual:devtools-outline";
+```
+
+Then you can use ctrl+O or shift+O to toggle outlines.
