@@ -1,0 +1,62 @@
+.debug-breakpoints {
+    position: fixed;
+    display: block;
+    z-index: 100000;
+    bottom: 0;
+    left: 0;
+
+    &::after {
+        background-color: #334155;
+        display: block;
+        clip-path: #fff;
+        font-size: 12px;
+        padding: 4px 8px;
+        border: solid #ffffff88 1px;
+        opacity: 0.5;
+    }
+
+    &:hover::after {
+        transform: translateX(calc(100vw - 100% - 16px))
+    }
+
+    @apply after:content-["screen:_"] sm:after:content-["screen:sm"] md:after:content-["screen:md"] lg:after:content-["screen:lg"] xl:after:content-["screen:xl"] 2xl:after:content-["screen:2xl"] 3xl:after:content-["screen:3xl"];
+
+    &:after {}
+}
+
+.debug-outline *:not(.debug-cols):not(.debug-cols *):not(.debug-breakpoints) {
+    outline: 1px solid red;
+}
+
+.debug-cols {
+    @apply fixed top-0 left-0 bottom-0 right-0 h-full z-10000 pointer-events-none grid grid-cols-14;
+    visibility: hidden;
+
+    &.active {
+        visibility: visible;
+    }
+
+    div {
+        width: 100%;
+        border: solid 1px rgba(85, 189, 234, 0.3);
+        color: rgba(85, 189, 234, 0.3);
+        border-bottom: none;
+        border-top: none;
+        outline: none;
+        pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 16px;
+        padding-bottom: -16px;
+        justify-content: space-between;
+
+        &:first-child {
+            border-left: none;
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+}
